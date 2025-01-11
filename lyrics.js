@@ -4,12 +4,16 @@ let previewTimeLock;
 const audioElement = document.getElementById("audio");
 
 document.getElementById("accent-colour-css").innerText = `
-nav, button, .card-flat-right, .card-flat-top-right-alt, .card-flat-bottom-right-alt {
+nav, button, .card-flat, .card-flat-right, .card-flat-top-right-alt, .card-flat-bottom-right-alt {
   background-color: ${accentColour};
 }
 
 button:not(#play, #stop, #repeat):hover {
   background-color: ${accentColour.replace("0.25", "0.5")} !important;
+}
+
+input {
+  background-color: ${accentColour} !important;
 }
 `;
 

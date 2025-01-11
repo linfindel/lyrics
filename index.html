@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lyrics Studio</title>
+
+  <link rel="stylesheet" href="https://linfindel.github.io/nadircss/nadir.css">
+
+  <style id="accent-colour-css"></style>
+
+  <style>
+    #progress-container {
+      --progress-height: 100%;
+
+      cursor: pointer;
+    }
+
+    #progress-container:hover {
+      --progress-height: 1rem;
+
+      height: 1rem;
+    }
+
+    #progress-bar {
+      height: var(--progress-height);
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar-column">
+    <nav>
+      <h1>Lyrics Studio</h1>
+    </nav>
+
+    <button onclick="uploadFile()">
+      <span class="material-symbols-rounded">upload_file</span>
+      Upload file
+    </button>
+  </div>
+
+  <div class="row-flat bottom" id="controls" style="opacity: 0; pointer-events: none;">
+    <img class="card-flat-right" id="cover-art" style="height: 100%; padding: 0;">
+
+    <div id="details" class="card-flat column" style="height: calc(100% - 5rem);">
+      <h2 id="title" style="margin: 0; align-self: flex-start;">Song Name</h2>
+      
+      <h3 id="timestamp"></h3>
+
+      <div id="progress-container" class="progress" style="background-color: rgba(100, 100, 100, 0.25); width: 100%; cursor: pointer;">
+        <div id="progress-bar" class="progress" style="background-color: rgba(100, 100, 100, 1); width: 50%;"></div>
+      </div>
+    </div>
+
+    <div class="column-flat" style="height: 100%;">
+      <button onclick="play()" id="play" class="card-flat-top-right-alt" style="height: 50%;">
+        <span style="font-size: 2rem;" id="play-icon" class="material-symbols-rounded">play_arrow</span>
+      </button>
+
+      <button id="stop" class="card-flat-bottom-right-alt" style="height: 50%;">
+        <span style="font-size: 2rem;" class="material-symbols-rounded">stop</span>
+      </button>
+    </div>
+  </div>
+
+  <audio id="audio" loop></audio>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vibrant.js/1.0.0/Vibrant.min.js"></script>
+  <script src="lyrics.js"></script>
+</body>
+</html>
